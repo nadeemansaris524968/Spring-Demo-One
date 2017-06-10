@@ -16,7 +16,8 @@
     
     <bean id="myCoach"
     	class="com.nadeem.springdemo.TrackCoach"
-    	scope="prototype">
+    	init-method="doMyStartUpStuff"
+    	destroy-method="doMyCleanUp">
     	
     	<!-- setup constructor injection -->
     	<constructor-arg ref="myFortuneService"/>
