@@ -36,8 +36,14 @@
     	
     </bean>
     
+    <bean id="randomFortune" 
+    	class="com.nadeem.springdemo.RandomFortuneService" >
+    </bean>
+    
     <bean id="swimCoach"
     	class="com.nadeem.springdemo.SwimCoach">
+    	
+    	<constructor-arg ref="randomFortune" />
     </bean>
     
 </beans>

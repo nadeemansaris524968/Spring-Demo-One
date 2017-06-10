@@ -1,6 +1,12 @@
 package com.nadeem.springdemo;
 
 public class SwimCoach implements Coach {
+	
+	private FortuneService fortuneService;
+	
+	public SwimCoach(FortuneService theFortuneService){
+		fortuneService = theFortuneService;
+	}
 
 	@Override
 	public String getDailyWorkout() {
@@ -10,8 +16,9 @@ public class SwimCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		System.out.println("SwimCoach - inside getDailyFortune.");
+		return fortuneService.getFortune();
 	}
 
 }
