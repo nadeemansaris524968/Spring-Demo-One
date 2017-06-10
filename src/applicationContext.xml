@@ -8,9 +8,22 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
-    <bean id="myCoach"
-    	class="com.nadeem.springdemo.BaseballCoach">
+    
+    <!-- defining my dependency -->
+    <bean id="myFortuneService"
+    	class="com.nadeem.springdemo.HappyFortuneService">
     </bean>
+    
+    <bean id="myCoach"
+    	class="com.nadeem.springdemo.TrackCoach">
+    	<!-- setup constructor injection -->
+    	<constructor-arg ref="myFortuneService"/>
+    </bean>
+    
+    <bean id="swimCoach"
+    	class="com.nadeem.springdemo.SwimCoach">
+    </bean>
+    
 </beans>
 
 
